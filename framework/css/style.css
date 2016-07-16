@@ -6,11 +6,11 @@
 }
 /* Add a gray background color and some padding to the footer */
 
-footer.row {
+footer {
     background-color: #f2f2f2;
     padding: 25px;
     margin-left:0px;
-    margein-right:0px;
+
 }
 * {
     font-family: "Josefin Sans", sans-serif;
