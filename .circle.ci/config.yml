@@ -1,0 +1,46 @@
+version: 2.1
+
+jobs:
+  build:
+    docker:
+      - image: circleci/node:14
+
+    steps:
+      - checkout
+
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+
+      - run:
+          name: Install dependencies
+          command: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+
+      - run:
+          name: Build app
+          command: npm run build
+
+  deploy:
+    docker:
+      - image: google/cloud-sdk:latest
+
+    steps:
+      - checkout
+
+      - run:
+          name: Configure Google Cloud SDK
+          command: echo $GCLOUD_SERVICE_KEY | base64 --decode --ignore-garbage > ${HOME}/gcloud-service-key.json
+
+      - run:
+          name: Authenticate with Google Cloud
+          command: gcloud auth activate-service-account --key-file=${HOME}/gcloud-service-key.json
+
+      - run:
+          name: Deploy to Google Cloud
+          command: gcloud app deploy --project manpreet-singh-07
