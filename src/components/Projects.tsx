@@ -10,6 +10,7 @@ import {
 } from "@mui/material";
 import { ItemCatalog } from "./ItemCatalog";
 import { ImageAI } from "./ImageAI";
+import { MarsDashboard } from "./Marsdashboard";
 
 export function Projects() {
   return (
@@ -27,8 +28,9 @@ export function Projects() {
             </TableRow>
           </TableHead>
           <TableBody>
-            <ImageAI />
+            <MarsDashboard />
             <ItemCatalog />
+            <ImageAI />
           </TableBody>
         </Table>
       </TableContainer>
