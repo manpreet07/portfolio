@@ -36,8 +36,7 @@ jobs:
           command: npm run test
 
       - store_test_results:
-          name: Test Results
-          command:
+          path: test-results
 
   deploy:
     docker:
