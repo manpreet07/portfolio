@@ -1,28 +1,15 @@
 import {
   Container,
   Typography,
-  Paper,
-  styled,
   TableContainer,
   Table,
   TableHead,
   TableBody,
   TableRow,
   TableCell,
-  Button,
-  Box,
-  Link,
 } from "@mui/material";
 import { ItemCatalog } from "./ItemCatalog";
 import { ImageAI } from "./ImageAI";
-
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.background.default,
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "center",
-  boxShadow: "inherit",
-}));
 
 export function Projects() {
   return (
