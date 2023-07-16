@@ -26,13 +26,8 @@ jobs:
           name: Build app
           command: npm run build
 
-  test:
-    docker:
-      - image: cimg/node:20.4.0
-
-    steps:
       - run:
-          name: Test app
+          name: Run tests
           command: npm run test
 
       - store_test_results:
@@ -55,15 +50,12 @@ jobs:
 
       - run:
           name: Deploy to Google Cloud
-          command: gcloud app deploy --project manpreet-singh-07
+          command: gcloud app deploy --project $PROJECT_ID
 
 workflows:
   build_and_test:
     jobs:
       - build
-      - test:
-          requires:
-            - build
       - deploy:
           requires:
-            - test
+            - build
