@@ -53,12 +53,18 @@ export function MarsDashboard() {
         </Typography>
       </TableCell>
       <TableCell>
-        <Link href="https://github.com/manpreet07/image-ai" color="inherit">
+        <Link
+          href="https://github.com/manpreet07/mars-dashboard"
+          color="inherit"
+        >
           gith repo
         </Link>
       </TableCell>
       <TableCell>
-        <Link href="https://github.com/manpreet07/image-ai" color="inherit">
+        <Link
+          href="https://github.com/manpreet07/mars-dashboard"
+          color="inherit"
+        >
           live site
         </Link>
       </TableCell>

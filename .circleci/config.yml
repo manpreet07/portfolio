@@ -9,22 +9,32 @@ jobs:
       - checkout
 
       - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "package-lock.json" }}
-            - v1-dependencies-
+          key: dependency-cache-{{ checksum "package-lock.json" }}
 
       - run:
-          name: Install dependencies
+          name: Install Dependencies
           command: npm install
 
       - save_cache:
+          key: dependency-cache-{{ checksum "package-lock.json" }}
           paths:
-            - node_modules
-          key: v1-dependencies-{{ checksum "package-lock.json" }}
+            - ./node_modules
 
       - run:
-          name: Build app
+          name: Build React App
           command: npm run build
+
+      - save_cache:
+          key: app-build-cache-{{ .Branch }}
+          paths:
+            - ./build
+
+      - run:
+          name: Run tests
+          command: npm run test
+
+      - store_test_results:
+          path: test-results
 
   deploy:
     docker:
@@ -43,4 +53,12 @@ jobs:
 
       - run:
           name: Deploy to Google Cloud
-          command: gcloud app deploy --project manpreet-singh-07
+          command: gcloud app deploy --project $PROJECT_ID
+
+workflows:
+  build_and_test:
+    jobs:
+      - build
+      - deploy:
+          requires:
+            - build

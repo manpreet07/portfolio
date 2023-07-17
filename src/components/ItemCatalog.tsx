@@ -78,12 +78,12 @@ export function ItemCatalog() {
         </Typography>
       </TableCell>
       <TableCell>
-        <Link href="https://github.com/manpreet07/image-ai" color="inherit">
+        <Link href="https://github.com/manpreet07/item-catalog" color="inherit">
           gith repo
         </Link>
       </TableCell>
       <TableCell>
-        <Link href="https://github.com/manpreet07/image-ai" color="inherit">
+        <Link href="https://github.com/manpreet07/item-catalog" color="inherit">
           live site
         </Link>
       </TableCell>
