@@ -2,7 +2,7 @@ version: 2.1
 
 orbs:
   node: circleci/node@5.1.0
-  aws-s3: circleci/aws-s3@4.0.0
+  aws-cli: circleci/aws-cli@4.1.2
 
 jobs:
   build:
@@ -26,10 +26,12 @@ jobs:
     steps:
       - attach_workspace:
           at: /tmp/workspace
-      - aws-s3/sync:
-          from: /tmp/workspace/build
-          to: 's3://$AWS_S3_BUCKET_NAME'
-          arguments: '--acl public-read --delete'
+      - aws-cli/setup
+      - run:
+          name: Deploy to AWS S3
+          command: |
+            aws s3 sync /tmp/workspace/build s3://$AWS_S3_BUCKET_NAME --acl public-read --delete
+
 
 workflows:
   build_and_deploy:
