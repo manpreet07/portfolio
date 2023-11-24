@@ -1,16 +1,20 @@
 version: 2.1
 
 orbs:
-  aws-s3: circleci/aws-s3@4.0.0
+  node: circleci/node@4.7.0
+  aws-s3: circleci/aws-s3@1.0.17
 
 jobs:
   build:
     docker:
-      - image: cimg/node:lts
+      - image: cimg/node:14.17  # You can choose the node version that matches your project
     steps:
       - checkout
-      - run: npm install
-      - run: npm run build
+      - node/install-packages:
+          pkg-manager: npm
+      - run:
+          name: Build React App
+          command: npm run build
       - persist_to_workspace:
           root: .
           paths:
@@ -18,18 +22,17 @@ jobs:
 
   deploy:
     docker:
-      - image: cimg/node:lts
+      - image: cimg/node:14.17
     steps:
       - attach_workspace:
-          at: .
+          at: /tmp/workspace
       - aws-s3/sync:
-          from: build
+          from: /tmp/workspace/build
           to: 's3://$AWS_S3_BUCKET_NAME'
           arguments: '--acl public-read --delete'
           overwrite: true
 
 workflows:
-  version: 2
   build_and_deploy:
     jobs:
       - build
