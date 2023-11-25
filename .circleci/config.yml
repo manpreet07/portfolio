@@ -18,7 +18,11 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - build    
+            - build   
+      - run:
+          name: List root dir
+          command:
+            ls -la .               
 
   deploy:
     docker:
@@ -27,10 +31,6 @@ jobs:
     - attach_workspace:
         at: .
     - aws-cli/setup
-    - run:
-        name: List root dir
-        command: | 
-          ls la .
     - run:
         name: Deploy to AWS S3
         command: | 
