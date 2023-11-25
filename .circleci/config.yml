@@ -29,9 +29,9 @@ jobs:
     - aws-cli/setup
     - run:
         name: Deploy to AWS S3
-        command: |
-          ls -la /tmp
-          aws s3 sync ./build s3://$AWS_S3_BUCKET_NAME --acl public-read --delete
+        command:
+          ls -la ./
+          # aws s3 sync ./build s3://$AWS_S3_BUCKET_NAME --acl public-read --delete
 
 workflows:
   build_and_deploy:
