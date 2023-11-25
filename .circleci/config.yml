@@ -18,11 +18,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - build
-      - run:
-          name: List root dir
-          command:
-            ls -la .     
+            - build    
 
   deploy:
     docker:
@@ -32,9 +28,13 @@ jobs:
         at: .
     - aws-cli/setup
     - run:
+        name: List root dir
+        command: | 
+          ls la .
+    - run:
         name: Deploy to AWS S3
         command: | 
-          aws s3 sync ./build s3://$AWS_S3_BUCKET_NAME --acl public-read --delete
+          aws s3 sync ./build s3://$AWS_S3_BUCKET_NAME/react-app --acl public-read --delete
 
 workflows:
   build_and_deploy:
