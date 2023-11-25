@@ -24,14 +24,13 @@ jobs:
     docker:
       - image: cimg/node:21.2.0
     steps:
-      - attach_workspace:
-          at: /tmp/workspace
-      - aws-cli/setup
-      - run:
-          name: Deploy to AWS S3
-          command: |
-            aws s3 sync /tmp/workspace/build s3://$AWS_S3_BUCKET_NAME --acl public-read --delete
-
+    - attach_workspace:
+        at: /tmp/workspace
+    - aws-cli/setup
+    - run:
+        name: Deploy to AWS S3
+        command: |
+          aws s3 sync /tmp/workspace/build s3://$AWS_S3_BUCKET_NAME --acl public-read --delete
 
 workflows:
   build_and_deploy:
