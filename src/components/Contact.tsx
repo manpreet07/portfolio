@@ -1,66 +1,22 @@
-import {
-  Button,
-  Container,
-  Table,
-  TableBody,
-  TableCell,
-  TableContainer,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
-import linkedIn from "../LinkedIn.png";
+import { Box, Typography, Container, Link } from "@mui/material";
 
 export function Contact() {
   return (
     <Container>
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <Typography variant="h5">Contact</Typography>
-          </TableHead>
-          <TableBody>
-            <TableRow style={{ padding: "none" }}>
-              <TableCell>
-                <Typography>Email:</Typography>
-              </TableCell>
-              <TableCell>
-                <Typography>manpreet1107@gmail.com</Typography>
-              </TableCell>
-            </TableRow>
-            <TableRow style={{ padding: "none" }}>
-              <TableCell>
-                <Typography>Contact:</Typography>
-              </TableCell>
-              <TableCell>
-                <Typography>+1 (857)-294-9978</Typography>
-              </TableCell>
-            </TableRow>
-            <TableRow style={{ padding: "none" }}>
-              <TableCell>
-                <Typography>LinkedIn:</Typography>
-              </TableCell>
-              <TableCell>
-                <Button
-                  variant="contained"
-                  href="https://www.linkedin.com/in/manpreet-singh-5002105a/"
-                  style={{
-                    backgroundImage: `url(${linkedIn})`,
-                    backgroundRepeat: "no-repeat",
-                    backgroundSize: "contain",
-                    backgroundPosition: "center",
-                    backgroundColor: "transparent",
-                    width: "110px",
-                    height: "50px",
-                    color: "white",
-                    boxShadow: "none",
-                  }}
-                ></Button>
-              </TableCell>
-            </TableRow>
-          </TableBody>
-        </Table>
-      </TableContainer>
+      <Typography variant="h5">Contact</Typography>
+      <br />
+      <Box>
+        <Typography variant="subtitle1">manpreet1107@gmail.com</Typography>
+        <Typography variant="subtitle1">+1 (857)-294-9978</Typography>
+        <Typography variant="subtitle1">
+          <Link
+            href="https://www.linkedin.com/in/manpreet-singh-5002105a/"
+            style={{ color: "#2e2e2e" }}
+          >
+            LinkedIn
+          </Link>
+        </Typography>
+      </Box>
     </Container>
   );
 }
