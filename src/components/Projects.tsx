@@ -1,39 +1,31 @@
-import {
-  Container,
-  Typography,
-  TableContainer,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@mui/material";
-import { ItemCatalog } from "./ItemCatalog";
-import { ImageAI } from "./ImageAI";
-import { MarsDashboard } from "./Marsdashboard";
+import { Container, Grid, Paper, Typography, styled } from "@mui/material";
+import { ItemCatalog } from "./projects/ItemCatalog";
+import { MarsDashboard } from "./projects/Marsdashboard";
 
 export function Projects() {
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: "#f0e2e1",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    color: theme.palette.text.secondary,
+  }));
+
   return (
     <Container>
       <Typography variant="h5">Projects</Typography>
-      <TableContainer>
-        <Table>
-          <TableHead>
-            <TableRow>
-              <TableCell>Name</TableCell>
-              <TableCell>Technology Stack</TableCell>
-              <TableCell>Description</TableCell>
-              <TableCell>Git Repo</TableCell>
-              <TableCell>Live Site</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
+      <br />
+      <Grid container spacing={2} columns={16}>
+        <Grid item xs={8}>
+          <Item>
             <MarsDashboard />
+          </Item>
+        </Grid>
+        <Grid item xs={8}>
+          <Item>
             <ItemCatalog />
-            <ImageAI />
-          </TableBody>
-        </Table>
-      </TableContainer>
+          </Item>
+        </Grid>
+      </Grid>
     </Container>
   );
 }
