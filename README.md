@@ -1,3 +1,3 @@
 # Portfolio
 
-React Microfrontend App built using Vite Module Federation
+React microfrontend powered by Vite and Module Federation architecture
