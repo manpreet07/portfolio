@@ -17,7 +17,11 @@ export function Contact() {
       <TableContainer>
         <Table>
           <TableHead>
-            <Typography variant="h5">Contact</Typography>
+            <TableRow>
+              <TableCell>
+                <Typography variant="h5">Contact</Typography>
+              </TableCell>
+            </TableRow>
           </TableHead>
           <TableBody>
             <TableRow style={{ padding: "none" }}>
