@@ -10,7 +10,7 @@ jobs:
       - persist_to_workspace:
           root: .
           paths:
-            - build
+            - dist
             - firebase.json
 
   deploy:
