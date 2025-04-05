@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview --port 5001 --strictPort",
+    "preview": "vite preview --port 5000 --strictPort",
     "start": "npm run build && npm run preview"
   },
   "dependencies": {
@@ -17,11 +17,13 @@
     "@mui/styled-engine-sc": "^7.0.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
+    "react-router-dom": "^7.5.0",
     "styled-components": "^6.1.17"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
     "@originjs/vite-plugin-federation": "^1.4.0",
+    "@types/node": "^22.14.0",
     "@types/react": "^19.0.10",
     "@types/react-dom": "^19.0.4",
     "@vitejs/plugin-react": "^4.3.4",

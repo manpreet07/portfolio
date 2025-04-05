@@ -1,13 +1,4 @@
-import {
-  Container,
-  Typography,
-  TableContainer,
-  Table,
-  TableHead,
-  TableBody,
-  TableRow,
-  TableCell,
-} from "@mui/material";
+import { Container, Typography } from "@mui/material";
 import { ItemCatalog } from "./ItemCatalog";
 import { MarsDashboard } from "./Marsdashboard";
 
@@ -15,7 +6,7 @@ export function Projects() {
   return (
     <Container>
       <Typography variant="h5">Projects</Typography>
-      <TableContainer>
+      {/* <TableContainer>
         <Table>
           <TableHead>
             <TableRow>
@@ -26,12 +17,12 @@ export function Projects() {
               <TableCell>Live Site</TableCell>
             </TableRow>
           </TableHead>
-          <TableBody>
-            <MarsDashboard />
-            <ItemCatalog />
-          </TableBody>
+          <TableBody> */}
+      <MarsDashboard />
+      <ItemCatalog />
+      {/* </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer> */}
     </Container>
   );
 }
