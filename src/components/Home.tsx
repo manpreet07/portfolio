@@ -1,159 +1,115 @@
-import { useState } from "react";
-import Box from "@mui/material/Box";
-import {
-  AppBar,
-  Avatar,
-  Container,
-  CssBaseline,
-  Button,
-  ThemeProvider,
-  Toolbar,
-  Typography,
-  createTheme,
-  Divider,
-} from "@mui/material";
-import profile from "../../src/profile.jpeg";
-import { Projects } from "./Projects";
-import { Contact } from "./Contact";
-import { About } from "./About";
-import { Resume } from "./Resume";
-import { Skills } from "./Skills";
-
-const theme = createTheme({
-  palette: {
-    mode: "light",
-    primary: {
-      main: "#faeee7",
-    },
-    background: {
-      default: "#faeee7",
-    },
-    text: { primary: "#33272a" },
-  },
-  typography: {
-    fontFamily: [
-      "-apple-system",
-      "BlinkMacSystemFont",
-      "Segoe UI",
-      "Roboto",
-      "Helvetica Neue",
-      "Raleway",
-      "sans-serif",
-      "Apple Color Emoji",
-      "Segoe UI Emoji",
-      "Segoe UI Symbol",
-    ].join(","),
-  },
-  components: {
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          textTransform: "none",
-        },
-      },
-    },
-    MuiTableCell: {
-      styleOverrides: {
-        root: {
-          paddingLeft: "0px",
-          borderBottom: "none",
-        },
-      },
-    },
-  },
-});
+import { Link } from "react-router-dom";
 
 function Home() {
-  const [about, setAboutState] = useState(true);
-  const [projects, setProjectsState] = useState(false);
-  const [contact, setContactState] = useState(false);
-  const [skills, setSkillsState] = useState(false);
-  const [resume, setResumeState] = useState(false);
-
-  const handleAbout = () => {
-    setAboutState(true);
-    setProjectsState(false);
-    setContactState(false);
-    setSkillsState(false);
-    setResumeState(false);
-  };
-
-  const handleProjects = () => {
-    setAboutState(false);
-    setProjectsState(true);
-    setContactState(false);
-    setSkillsState(false);
-    setResumeState(false);
-  };
-  const handleContact = () => {
-    setAboutState(false);
-    setProjectsState(false);
-    setContactState(true);
-    setSkillsState(false);
-    setResumeState(false);
-  };
-  const handleSkills = () => {
-    setAboutState(false);
-    setProjectsState(false);
-    setContactState(false);
-    setSkillsState(true);
-    setResumeState(false);
-  };
-
-  const handleResume = () => {
-    setAboutState(false);
-    setProjectsState(false);
-    setContactState(false);
-    setSkillsState(false);
-    setResumeState(true);
-  };
-
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Container>
-        <AppBar color="primary" position="relative" sx={{ boxShadow: 0 }}>
-          <Toolbar style={{ padding: "0" }}>
-            <Avatar src={profile}></Avatar>
-
-            <Typography
-              variant="h5"
-              component="div"
-              sx={{ flexGrow: 1, display: { xs: "none", sm: "block" } }}
-              paddingLeft={2}
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="h-100">
+        <div className="text-6xl p-2">Hi, I am Manpreet </div>
+        <div className="text-6xl p-2">Software Engineer</div>
+      </div>
+      <div className="flex text-6xl mt-10">
+        <Link to="/projects">Projects</Link>
+      </div>
+      <div className="grid grid-cols-2 gap-4 mt-5">
+        <div className="p-2 inline items-stretch">
+          <div className="flex text-2xl hover:text-blue-400">
+            <Link to="/projects/mars-dashboard">Mars Dashboard</Link>
+          </div>
+          <img src="/mars2.jpeg" className="h-50" />
+          <div className="flex flex-col justify-between">
+            <Link
+              to="/projects/item-catalog"
+              className="flex text-sm mt-5 h-30 hover:text-blue-400"
             >
-              Manpreet Singh
-            </Typography>
-            <Box sx={{ display: "flex", gap: "10px" }}>
-              <Button sx={{ color: "#33272a" }} onClick={handleAbout}>
-                {"About"}
-              </Button>
-              <Button sx={{ color: "#33272a" }} onClick={handleSkills}>
-                {"Skills"}
-              </Button>
-              <Button sx={{ color: "#33272a" }} onClick={handleProjects}>
-                {"Projects"}
-              </Button>
-              <Button sx={{ color: "#33272a" }} onClick={handleResume}>
-                {"Resume"}
-              </Button>
-              <Button sx={{ color: "#33272a" }} onClick={handleContact}>
-                {"Contact"}
-              </Button>
-            </Box>
-          </Toolbar>
-        </AppBar>
-        <Divider />
-        <br />
-      </Container>
-      <Box>
-        <Box>{about && <About />}</Box>
-        <Box>{skills && <Skills />}</Box>
-        <Box>{projects && <Projects />}</Box>
-        <Box>{resume && <Resume />}</Box>
-        <Box>{contact && <Contact />}</Box>
-      </Box>
-    </ThemeProvider>
+              A web application that retrieves and displays high-resolution
+              images captured by NASA’s Mars rovers using the official NASA Mars
+              Rover Photos API. Users can explore images by rover (Curiosity,
+              Opportunity, Spirit), camera type, and Martian sol (solar day),
+              with responsive design and intuitive UI for seamless browsing.
+            </Link>
+            <div className="flex mt-5">
+              <Link
+                to="https://www.typescriptlang.org/"
+                className="flex ml-4 h-6"
+              >
+                <img src="/ts.svg" className="rounded-md" />
+              </Link>
+              <Link to="https://react.dev/" className="flex ml-4 h-6">
+                <img src="/react.svg" />
+              </Link>
+              <Link to="https://www.python.org/" className="flex ml-4 h-6">
+                <img src="/py.png" />
+              </Link>
+              <Link
+                to="https://fastapi.tiangolo.com/"
+                className="flex ml-4 h-6"
+              >
+                <img src="/fast-api.png" />
+              </Link>
+            </div>
+          </div>
+        </div>
+        <div className="p-2 inline">
+          <div className="flex text-2xl hover:text-blue-400">
+            <Link to="/projects/item-catalog">Item Catalog</Link>
+          </div>
+          <img src="" className="h-50" />
+          <div className="flex flex-col justify-between">
+            <Link
+              to="/projects/item-catalog"
+              className="flex text-sm mt-5 h-30 hover:text-blue-400"
+            >
+              Catalog Item App is integrated with third party user registration
+              and authentication that provides a list of items within a variety
+              of categories
+            </Link>
+            <div className="flex mt-5">
+              <Link to="https://react.dev/" className="flex ml-4 h-6">
+                <img src="/react.svg" />
+              </Link>
+              <Link to="https://www.python.org/" className="flex ml-4 h-6">
+                <img src="/py.png" />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div className="flex text-6xl mt-10">Contact</div>
+      <div className="flex ml-2 p-2 mt-5">manpreet1107@gmail.com</div>
+      <div className="flex text-6xl mt-10">Skills</div>
+      <div className="flex p-2 mt-5">
+        <Link to="https://nodejs.org/en" className="flex ml-2 h-10">
+          <img src="/node.png" className="rounded-md" />
+        </Link>
+        <Link to="https://www.typescriptlang.org/" className="flex ml-4 h-10">
+          <img src="/ts.svg" className="rounded-md" />
+        </Link>
+        <Link to="https://www.javascript.com/" className="flex ml-4 h-10">
+          <img src="/js.png" className="rounded-md" />
+        </Link>
+        <Link to="https://www.postgresql.org/" className="flex ml-4 h-10">
+          <img src="/postgres.png" className="rounded-md" />
+        </Link>
+        <Link to="https://nestjs.com/" className="flex ml-4 h-10">
+          <img src="/nestjs.svg" />
+        </Link>
+        <Link to="https://react.dev/" className="flex ml-4 h-10">
+          <img src="/react.svg" />
+        </Link>
+        <Link to="https://expressjs.com/" className="flex ml-4 h-10">
+          <img src="/express.png" />
+        </Link>
+        <Link to="https://emberjs.com/" className="flex ml-4 h-10">
+          <img src="/ember.svg" />
+        </Link>
+        <Link to="https://www.python.org/" className="flex ml-4 h-10">
+          <img src="/py.png" />
+        </Link>
+        <Link to="https://fastapi.tiangolo.com/" className="flex ml-4 h-10">
+          <img src="/fast-api.png" />
+        </Link>
+      </div>
+    </div>
   );
 }
 
