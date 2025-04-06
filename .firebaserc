@@ -1,5 +1,15 @@
 {
   "projects": {
     "default": "portfolio-ddeba"
-  }
+  },
+  "targets": {
+    "portfolio-ddeba": {
+      "hosting": {
+        "host": [
+          "portfolio-ddeba"
+        ]
+      }
+    }
+  },
+  "etags": {}
 }
