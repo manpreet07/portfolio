@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-export function MarsDashboard() {
+export function Dashboard() {
   return (
     <div className="p-4 inline">
       <div className="flex text-xl text-fuchsia-100">
