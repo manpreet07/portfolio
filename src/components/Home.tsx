@@ -7,18 +7,16 @@ function Home() {
         <div className="text-6xl p-2">Hi, I am Manpreet </div>
         <div className="text-6xl p-2">Software Engineer</div>
       </div>
-      <div className="flex text-6xl mt-10">
-        <Link to="/projects">Projects</Link>
-      </div>
+      <div className="flex text-6xl mt-10">Projects</div>
       <div className="grid grid-cols-2 gap-4 mt-5">
         <div className="p-2 inline items-stretch">
           <div className="flex text-2xl hover:text-blue-400">
-            <Link to="/projects/mars-dashboard">Mars Dashboard</Link>
+            <Link to="/mars-dashboard">Mars Dashboard</Link>
           </div>
           <img src="/mars2.jpeg" className="h-50" />
           <div className="flex flex-col justify-between">
             <Link
-              to="/projects/item-catalog"
+              to="/item-catalog"
               className="flex text-sm mt-5 h-30 hover:text-blue-400"
             >
               A web application that retrieves and displays high-resolution

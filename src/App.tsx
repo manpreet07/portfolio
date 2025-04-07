@@ -1,10 +1,10 @@
-import { lazy, Suspense } from "react";
+import React, { Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import Navbar from "./components/NavBar";
 import "./index.css";
 
-const MarsDashboardApp = lazy(() => import("marsDashboard/App"));
+const MarsDashboardApp = React.lazy(() => import("marsDashboardApp/App"));
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
-              path="/projects/mars-dashboard"
+              path="/mars-dashboard"
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <MarsDashboardApp />
