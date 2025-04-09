@@ -1,11 +1,22 @@
-@layer theme, base, components, utilities;
 @import "tailwindcss";
-@import "tailwindcss/theme.css" layer(theme);
-@import "tailwindcss/preflight.css" layer(base);
-@import "tailwindcss/utilities.css" layer(utilities);
+
+@theme {
+  --color-typescript: #3178c6;
+  --color-react: #087ea4;
+  --color-python: #3776ab;
+  --color-fast-api: #009485;
+  --color-node-js: #417e38;
+  --color-javascript: #f7df1e;
+  --color-postgres: #336791;
+  --color-nest-js: #ea2845;
+  --color-express-js: #f0f1f3;
+  --color-ember-js: #cf2d20;
+  --color-button-dark-teel: #004d61;
+  --color-button-blue: #006494;
+}
 
 #root {
-  background-color: var(--color-gray-900);
+  background-color: black;
   color: whitesmoke;
   min-height: 100vh;
   font-family: "Courier New", Courier, monospace;

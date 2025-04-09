@@ -21,7 +21,7 @@ export default defineConfig(({ mode }) => {
         remotes: {
           marsDashboardApp,
         },
-        shared: ["react", "react-dom"],
+        shared: ["react", "react-dom", "react-router-dom"],
       }),
     ],
     build: {
@@ -29,6 +29,9 @@ export default defineConfig(({ mode }) => {
       target: "esnext",
       minify: false,
       cssCodeSplit: false,
+    },
+    server: {
+      port: 5000,
     },
   };
 });
