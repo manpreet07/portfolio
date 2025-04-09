@@ -15,7 +15,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route
-              path="/mars-dashboard"
+              path="/mars-dashboard/*"
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <MarsDashboardApp />

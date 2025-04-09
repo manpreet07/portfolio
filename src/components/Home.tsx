@@ -1,6 +1,29 @@
 import { Link } from "react-router-dom";
+import Skills from "./Skills";
+import { useEffect, useState } from "react";
+import axios from "axios";
+import { APod } from "../interfaces/APod";
+import typescript from "./../assets/ts.svg";
+import react from "./../assets/react.svg";
+import python from "./../assets/py.png";
+import fastApi from "./../assets/fast-api.png";
 
 function Home() {
+  let [apod, setAPod] = useState<APod>();
+
+  useEffect(() => {
+    const fetchAPod = async () => {
+      const response = await axios.get(
+        import.meta.env.VITE_SPACE_API_URL + "/api/v1/nasa/apod"
+      );
+      if (response) {
+        const aPod: APod = response.data;
+        setAPod(aPod);
+      }
+    };
+    fetchAPod();
+  }, []);
+
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div className="h-100">
@@ -13,45 +36,40 @@ function Home() {
           <div className="flex text-2xl hover:text-blue-400">
             <Link to="/mars-dashboard">Mars Dashboard</Link>
           </div>
-          <img src="/mars2.jpeg" className="h-50" />
+          <div className="w-130 h-100 rounded-lg overflow-hidden">
+            <img src={apod?.url} className="w-full h-full object-cover" />
+          </div>
           <div className="flex flex-col justify-between">
             <Link
-              to="/item-catalog"
-              className="flex text-sm mt-5 h-30 hover:text-blue-400"
+              to="/mars-dashboard"
+              className="flex text-sm mt-5 h-auto hover:text-blue-400"
             >
               A web application that retrieves and displays high-resolution
               images captured by NASA’s Mars rovers using the official NASA Mars
               Rover Photos API. Users can explore images by rover (Curiosity,
-              Opportunity, Spirit), camera type, and Martian sol (solar day),
-              with responsive design and intuitive UI for seamless browsing.
+              Opportunity, Spirit), camera type, and Martian sol (solar day).
             </Link>
             <div className="flex mt-5">
-              <Link
-                to="https://www.typescriptlang.org/"
-                className="flex ml-4 h-6"
-              >
-                <img src="/ts.svg" className="rounded-md" />
+              <Link to="https://www.typescriptlang.org/">
+                <img src={typescript} className="flex mt-2 h-6 rounded-sm" />
               </Link>
-              <Link to="https://react.dev/" className="flex ml-4 h-6">
-                <img src="/react.svg" />
+              <Link to="https://react.dev/">
+                <img src={react} className="flex mt-2 ml-4 h-6" />
               </Link>
-              <Link to="https://www.python.org/" className="flex ml-4 h-6">
-                <img src="/py.png" />
+              <Link to="https://www.python.org/">
+                <img src={python} className="flex mt-2 ml-4 h-6" />
               </Link>
-              <Link
-                to="https://fastapi.tiangolo.com/"
-                className="flex ml-4 h-6"
-              >
-                <img src="/fast-api.png" />
+              <Link to="https://fastapi.tiangolo.com/">
+                <img src={fastApi} className="flex mt-2 ml-4 h-6" />
               </Link>
             </div>
           </div>
         </div>
         <div className="p-2 inline">
           <div className="flex text-2xl hover:text-blue-400">
-            <Link to="/projects/item-catalog">Item Catalog</Link>
+            <Link to="/projects/item-catalog">Item Catalog (coming soon)</Link>
           </div>
-          <img src="" className="h-50" />
+          <img src="" className="w-full h-auto object-fill" />
           <div className="flex flex-col justify-between">
             <Link
               to="/projects/item-catalog"
@@ -62,51 +80,19 @@ function Home() {
               of categories
             </Link>
             <div className="flex mt-5">
-              <Link to="https://react.dev/" className="flex ml-4 h-6">
-                <img src="/react.svg" />
+              <Link to="https://www.typescriptlang.org/">
+                <img src={typescript} className="flex mt-2 h-6 rounded-sm" />
               </Link>
-              <Link to="https://www.python.org/" className="flex ml-4 h-6">
-                <img src="/py.png" />
+              <Link to="https://react.dev/">
+                <img src={react} className="flex mt-2 ml-4 h-6" />
               </Link>
             </div>
           </div>
         </div>
       </div>
       <div className="flex text-6xl mt-10">Contact</div>
-      <div className="flex ml-2 p-2 mt-5">manpreet1107@gmail.com</div>
-      <div className="flex text-6xl mt-10">Skills</div>
-      <div className="flex p-2 mt-5">
-        <Link to="https://nodejs.org/en" className="flex ml-2 h-10">
-          <img src="/node.png" className="rounded-md" />
-        </Link>
-        <Link to="https://www.typescriptlang.org/" className="flex ml-4 h-10">
-          <img src="/ts.svg" className="rounded-md" />
-        </Link>
-        <Link to="https://www.javascript.com/" className="flex ml-4 h-10">
-          <img src="/js.png" className="rounded-md" />
-        </Link>
-        <Link to="https://www.postgresql.org/" className="flex ml-4 h-10">
-          <img src="/postgres.png" className="rounded-md" />
-        </Link>
-        <Link to="https://nestjs.com/" className="flex ml-4 h-10">
-          <img src="/nestjs.svg" />
-        </Link>
-        <Link to="https://react.dev/" className="flex ml-4 h-10">
-          <img src="/react.svg" />
-        </Link>
-        <Link to="https://expressjs.com/" className="flex ml-4 h-10">
-          <img src="/express.png" />
-        </Link>
-        <Link to="https://emberjs.com/" className="flex ml-4 h-10">
-          <img src="/ember.svg" />
-        </Link>
-        <Link to="https://www.python.org/" className="flex ml-4 h-10">
-          <img src="/py.png" />
-        </Link>
-        <Link to="https://fastapi.tiangolo.com/" className="flex ml-4 h-10">
-          <img src="/fast-api.png" />
-        </Link>
-      </div>
+      <div className="flex p-2 mt-5">manpreet1107@gmail.com</div>
+      <Skills />
     </div>
   );
 }
