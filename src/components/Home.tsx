@@ -14,7 +14,7 @@ function Home() {
   useEffect(() => {
     const fetchAPod = async () => {
       const response = await axios.get(
-        import.meta.env.VITE_SPACE_API_URL + "/api/v1/nasa/apod"
+        import.meta.env.VITE_SPACE_API_URL + "/api/v1/apod"
       );
       if (response) {
         const aPod: APod = response.data;
@@ -25,18 +25,24 @@ function Home() {
   }, []);
 
   return (
-    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div className="h-100">
-        <div className="text-6xl p-2">Hi, I am Manpreet </div>
-        <div className="text-6xl p-2">Software Engineer</div>
+    <div className="flex flex-wrap p-4">
+      <div className="flex flex-wrap">
+        <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2">
+          Hi, I am Manpreet Singh
+        </div>
+        <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2">
+          Software Engineer
+        </div>
       </div>
-      <div className="flex text-6xl mt-10">Projects</div>
-      <div className="grid grid-cols-2 gap-4 mt-5">
-        <div className="p-2 inline items-stretch">
+      <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2 mt-10">
+        Projects
+      </div>
+      <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-5">
+        <div className="p-2">
           <div className="flex text-2xl hover:text-blue-400">
             <Link to="/mars-dashboard">Mars Dashboard</Link>
           </div>
-          <div className="w-130 h-100 rounded-lg overflow-hidden">
+          <div className="rounded-lg overflow-hidden">
             <img src={apod?.url} className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col justify-between">
@@ -65,7 +71,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="p-2 inline">
+        <div className="p-2">
           <div className="flex text-2xl hover:text-blue-400">
             <Link to="/projects/item-catalog">Item Catalog (coming soon)</Link>
           </div>
@@ -90,8 +96,10 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="flex text-6xl mt-10">Contact</div>
-      <div className="flex p-2 mt-5">manpreet1107@gmail.com</div>
+      <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2 mt-10">
+        Contact
+      </div>
+      <div className="p-2">manpreet1107@gmail.com</div>
       <Skills />
     </div>
   );

@@ -9,7 +9,7 @@ const MarsDashboardApp = React.lazy(() => import("marsDashboardApp/App"));
 function App() {
   return (
     <BrowserRouter>
-      <div className="min-h-screen max-w-screen-xl mx-auto px-6">
+      <div className="min-h-screen w-full max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
         <Navbar />
         <main className="p-6">
           <Routes>

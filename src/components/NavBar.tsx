@@ -6,39 +6,39 @@ import { JSX } from "react";
 function Navbar() {
   let location = useLocation();
 
-  let navbar: JSX.Element = <div></div>;
+  let navbar: JSX.Element = <div className="flex"></div>;
 
   if (location.pathname.startsWith("/mars-dashboard")) {
     navbar = (
-      <div className="flex">
+      <div className="flex flex-row">
         <div className="mt-5">
           <Link to="/mars-dashboard/curiosity">
-            <div className="flex p-2 h-10 text-gray-400">Curosity</div>
+            <div className="flex p-2 text-gray-400">Curosity</div>
           </Link>
         </div>
         <div className="mt-5">
           <Link to="/mars-dashboard/spirit">
-            <div className="flex p-2 h-10 text-gray-400">Spirit</div>
+            <div className="flex p-2 text-gray-400">Spirit</div>
           </Link>
         </div>
         <div className="mt-5">
           <Link to="/mars-dashboard/oppurtunity">
-            <div className="flex p-2 h-10 text-gray-400">Opportunity</div>
+            <div className="flex p-2 text-gray-400">Opportunity</div>
           </Link>
         </div>
       </div>
     );
   } else {
     navbar = (
-      <div className="flex">
-        <div className="mt-5">
+      <div className="flex flex-row">
+        <div className="flex mt-5">
           <Link to="https://www.linkedin.com/in/manpreet-singh-5002105a/">
-            <img src={linkedIn} className="flex p-2 h-10" />
+            <div className="flex p-2 text-gray-400">LinkedIn</div>
           </Link>
         </div>
         <div className="mt-5">
           <Link to="https://github.com/manpreet07">
-            <img src={git} className="flex ml-2 p-2 h-10" />
+            <div className="flex p-2 text-gray-400">Github</div>
           </Link>
         </div>
       </div>
@@ -48,8 +48,8 @@ function Navbar() {
   return (
     <nav className="flex justify-between">
       <div className="flex">
-        <div className="m-5">
-          <Link to="/" className="flex p-2 h-10 text-gray-400">
+        <div className="flex m-5">
+          <Link to="/" className="flex p-2 text-gray-400">
             Home
           </Link>
         </div>
