@@ -1,6 +1,4 @@
 import { Link, useLocation } from "react-router-dom";
-import git from "./../assets/git.png";
-import linkedIn from "./../assets/linkedin.png";
 import { JSX } from "react";
 
 function Navbar() {
