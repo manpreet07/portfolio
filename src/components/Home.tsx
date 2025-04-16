@@ -96,10 +96,12 @@ function Home() {
           </div>
         </div>
       </div>
-      <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2 mt-10">
-        Contact
+      <div className="inline">
+        <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2 mt-10">
+          Contact
+        </div>
+        <div className="mt-5 p-2">manpreet1107@gmail.com</div>
       </div>
-      <div className="p-2">manpreet1107@gmail.com</div>
       <Skills />
     </div>
   );
