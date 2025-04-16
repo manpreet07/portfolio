@@ -11,11 +11,12 @@ import fastApi from "./../assets/fast-api.png";
 function Home() {
   let [apod, setAPod] = useState<APod>();
 
+  const apiUrl = import.meta.env.VITE_SPACE_API_URL;
+  console.log("VITE_SPACE_API_URL:", apiUrl);
+
   useEffect(() => {
     const fetchAPod = async () => {
-      const response = await axios.get(
-        import.meta.env.VITE_SPACE_API_URL + "/api/v1/apod"
-      );
+      const response = await axios.get(apiUrl + "/api/v1/apod");
       if (response) {
         const aPod: APod = response.data;
         setAPod(aPod);
