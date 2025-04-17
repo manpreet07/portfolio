@@ -46,15 +46,12 @@ function Home() {
             <img src={apod?.url} className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col justify-between">
-            <Link
-              to="/mars-dashboard"
-              className="flex text-sm mt-5 h-auto hover:text-blue-400"
-            >
+            <div className="flex text-sm mt-5 h-auto hover:text-blue-400">
               A web application that retrieves and displays high-resolution
               images captured by NASA’s Mars rovers using the official NASA Mars
               Rover Photos API. Users can explore images by rover (Curiosity,
               Opportunity, Spirit), camera type, and Martian sol (solar day).
-            </Link>
+            </div>
             <div className="flex mt-5">
               <Link to="https://www.typescriptlang.org/">
                 <img src={typescript} className="flex mt-2 h-6 rounded-sm" />
