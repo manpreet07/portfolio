@@ -10,6 +10,11 @@ function Navbar() {
     navbar = (
       <div className="flex flex-row">
         <div className="mt-5">
+          <Link to="/mars-dashboard/perseverance">
+            <div className="flex p-2 text-gray-400">Perseverance</div>
+          </Link>
+        </div>
+        <div className="mt-5">
           <Link to="/mars-dashboard/curiosity">
             <div className="flex p-2 text-gray-400">Curosity</div>
           </Link>
@@ -20,7 +25,7 @@ function Navbar() {
           </Link>
         </div>
         <div className="mt-5">
-          <Link to="/mars-dashboard/oppurtunity">
+          <Link to="/mars-dashboard/opportunity">
             <div className="flex p-2 text-gray-400">Opportunity</div>
           </Link>
         </div>
