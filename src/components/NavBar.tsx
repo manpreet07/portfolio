@@ -8,7 +8,7 @@ function Navbar() {
 
   if (location.pathname.startsWith("/mars-dashboard")) {
     navbar = (
-      <div className="flex flex-row">
+      <div className="flex flex-wrap">
         <div className="mt-5">
           <Link to="/mars-dashboard/perseverance">
             <div className="flex p-2 text-gray-400">Perseverance</div>
@@ -33,8 +33,8 @@ function Navbar() {
     );
   } else {
     navbar = (
-      <div className="flex flex-row">
-        <div className="flex mt-5">
+      <div className="flex flex-wrap">
+        <div className="mt-5">
           <Link to="https://www.linkedin.com/in/manpreet-singh-5002105a/">
             <div className="flex p-2 text-gray-400">LinkedIn</div>
           </Link>
@@ -49,7 +49,7 @@ function Navbar() {
   }
 
   return (
-    <nav className="flex justify-between">
+    <nav className="flex flex-wrap justify-between">
       <div className="flex">
         <div className="flex m-5">
           <Link to="/" className="flex p-2 text-gray-400">

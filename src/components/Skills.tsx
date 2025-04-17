@@ -24,6 +24,7 @@ import github from "./../assets/git.png";
 import mui from "./../assets/mui.svg";
 import sqla from "./../assets/sqla.png";
 import typeorm from "./../assets/typeorm.png";
+import sequelize from "../assets/sequelize.svg";
 
 function Skills() {
   return (
@@ -184,6 +185,14 @@ function Skills() {
               </div>
             </Link>
           </div>
+          <div className="m-2 p-1 bg-button-blue rounded-sm">
+            <Link to="https://sequelize.org/">
+              <div className="flex ml-1 h-8">
+                <img src={sequelize} className="rounded-sm p-1" />
+                <div className="ml-1 mr-1 mt-1">Sequelize</div>
+              </div>
+            </Link>
+          </div>
           <div className="m-2 p-1 bg-[#006494] rounded-sm">
             <Link to="https://www.sqlalchemy.org/">
               <div className="flex ml-1 h-8">
@@ -205,9 +214,11 @@ function Skills() {
           </div>
           <div className="m-2 p-1 bg-button-blue rounded-sm">
             <Link to="https://firebase.google.com/">
-              <div className="flex ex ml-1 h-8">
+              <div className="flex ml-1 h-8">
                 <img src={aws} className="rounded-sm p-1" />
-                <div className="ml-1 mr-1 mt-1">Amazon Web Services</div>
+                <div className="text-sm sm:text-sm md:text-sm lg:text-lg xl:text-lg ml-1 mr-1 mt-1">
+                  Amazon Web Services
+                </div>
               </div>
             </Link>
           </div>

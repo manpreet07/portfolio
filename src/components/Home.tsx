@@ -34,7 +34,7 @@ function Home() {
           Software Engineer
         </div>
       </div>
-      <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2 mt-10">
+      <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-4xl p-2 mt-10">
         Projects
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-5">
@@ -42,11 +42,11 @@ function Home() {
           <div className="flex text-2xl hover:text-blue-400">
             <Link to="/mars-dashboard">Mars Dashboard</Link>
           </div>
-          <div className="rounded-lg overflow-hidden">
+          <div className="mt-5 rounded-lg overflow-hidden aspect-square">
             <img src={apod?.url} className="w-full h-full object-cover" />
           </div>
           <div className="flex flex-col justify-between">
-            <div className="flex text-sm mt-5 h-auto hover:text-blue-400">
+            <div className="flex text-sm mt-5 h-auto">
               A web application that retrieves and displays high-resolution
               images captured by NASA’s Mars rovers using the official NASA Mars
               Rover Photos API. Users can explore images by rover (Curiosity,
@@ -74,14 +74,11 @@ function Home() {
           </div>
           <img src="" className="w-full h-auto object-fill" />
           <div className="flex flex-col justify-between">
-            <Link
-              to="/projects/item-catalog"
-              className="flex text-sm mt-5 h-30 hover:text-blue-400"
-            >
+            <div className="flex text-sm mt-5 h-30">
               Catalog Item App is integrated with third party user registration
               and authentication that provides a list of items within a variety
               of categories
-            </Link>
+            </div>
             <div className="flex mt-5">
               <Link to="https://www.typescriptlang.org/">
                 <img src={typescript} className="flex mt-2 h-6 rounded-sm" />
