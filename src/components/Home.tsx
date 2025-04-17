@@ -12,7 +12,6 @@ function Home() {
   let [apod, setAPod] = useState<APod>();
 
   const apiUrl = import.meta.env.VITE_SPACE_API_URL;
-  console.log("VITE_SPACE_API_URL:", apiUrl);
 
   useEffect(() => {
     const fetchAPod = async () => {
