@@ -18,7 +18,7 @@ import gcp from "./../assets/gcp.svg";
 import aws from "./../assets/aws.png";
 import vite from "./../assets/vite.svg";
 import tailwind from "./../assets/tailwind.png";
-import circleci from "./../assets/circle.png";
+import circleci from "./../assets/cci.png";
 import jenkins from "./../assets/jenkins.svg";
 import github from "./../assets/git.png";
 import mui from "./../assets/mui.svg";
@@ -31,7 +31,7 @@ const SkillButton = ({ name, to, src }: Skill) => {
   return (
     <Link
       to={to}
-      className="inline-flex items-center gap-2 m-2 px-3 py-2 bg-button-blue rounded hover:bg-blue-700 transition text-white"
+      className="inline-flex items-center gap-2 m-2 px-3 py-2 bg-button-blue rounde transition text-white"
     >
       <img
         src={src}
