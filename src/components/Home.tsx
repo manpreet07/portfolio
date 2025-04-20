@@ -1,12 +1,20 @@
 import { Link } from "react-router-dom";
-import Skills from "./Skills";
+import Skills, { allSkills } from "./Skills";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { APod } from "../interfaces/APod";
 import typescript from "./../assets/ts.svg";
 import react from "./../assets/react.svg";
-import python from "./../assets/py.png";
 import fastApi from "./../assets/fast-api.png";
+import { Skill } from "../interfaces/Skill";
+
+const SkillImage = ({ to, src }: Skill) => {
+  return (
+    <Link to={to}>
+      <img src={src} className="flex mt-2 m-1.5 h-6 rounded-sm" />
+    </Link>
+  );
+};
 
 function Home() {
   let [apod, setAPod] = useState<APod>();
@@ -42,50 +50,64 @@ function Home() {
           <div className="flex text-2xl hover:text-blue-400">
             <Link to="/mars-dashboard">Mars Dashboard</Link>
           </div>
-          <div className="mt-5 rounded-lg overflow-hidden aspect-square">
-            <img src={apod?.url} className="w-full h-full object-cover" />
+          <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
+            <Link to="/mars-dashboard">
+              <img
+                src={apod?.url}
+                className="w-full h-full object-cover aspect-square"
+              />
+            </Link>
           </div>
           <div className="flex flex-col justify-between">
             <div className="flex text-sm mt-5 h-auto">
               A web application that retrieves and displays high-resolution
               images captured by NASA’s Mars rovers using the official NASA Mars
-              Rover Photos API. Users can explore images by rover (Curiosity,
-              Opportunity, Spirit), camera type, and Martian sol (solar day).
+              Rover Photos API. Users can explore images by rover (Perseverance,
+              Curiosity, Opportunity, and Spirit), camera type, and Martian sol
+              (solar day).
             </div>
             <div className="flex mt-5">
-              <Link to="https://www.typescriptlang.org/">
-                <img src={typescript} className="flex mt-2 h-6 rounded-sm" />
-              </Link>
-              <Link to="https://react.dev/">
-                <img src={react} className="flex mt-2 ml-4 h-6" />
-              </Link>
-              <Link to="https://www.python.org/">
-                <img src={python} className="flex mt-2 ml-4 h-6" />
-              </Link>
-              <Link to="https://fastapi.tiangolo.com/">
-                <img src={fastApi} className="flex mt-2 ml-4 h-6" />
-              </Link>
+              {allSkills
+                .filter(
+                  (s) =>
+                    s.src === typescript || s.src === react || s.src === fastApi
+                )
+                .map((mds) => (
+                  <SkillImage
+                    to={mds.to}
+                    src={mds.src}
+                    name={""}
+                    skillType={"programming language"}
+                  />
+                ))}
             </div>
           </div>
         </div>
         <div className="p-2">
           <div className="flex text-2xl hover:text-blue-400">
-            <Link to="/projects/item-catalog">Item Catalog (coming soon)</Link>
+            <Link to="">(coming soon)</Link>
           </div>
-          <img src="" className="w-full h-auto object-fill" />
+          <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
+            <Link to="">
+              <img
+                src=""
+                className="w-full h-full object-cover aspect-square"
+              />
+            </Link>
+          </div>
           <div className="flex flex-col justify-between">
-            <div className="flex text-sm mt-5 h-30">
-              Catalog Item App is integrated with third party user registration
-              and authentication that provides a list of items within a variety
-              of categories
-            </div>
+            <div className="flex text-sm mt-5 h-auto"></div>
             <div className="flex mt-5">
-              <Link to="https://www.typescriptlang.org/">
-                <img src={typescript} className="flex mt-2 h-6 rounded-sm" />
-              </Link>
-              <Link to="https://react.dev/">
-                <img src={react} className="flex mt-2 ml-4 h-6" />
-              </Link>
+              {allSkills
+                .filter((s) => s.src === typescript && s.src === react)
+                .map((mds) => (
+                  <SkillImage
+                    to={mds.to}
+                    src={mds.src}
+                    name={""}
+                    skillType={"programming language"}
+                  />
+                ))}
             </div>
           </div>
         </div>
