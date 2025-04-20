@@ -27,7 +27,7 @@ import typeorm from "./../assets/typeorm.png";
 import sequelize from "../assets/sequelize.svg";
 import { Skill } from "../interfaces/Skill";
 
-const SkillButton = ({ name, to, src, skillType }: Skill) => {
+const SkillButton = ({ name, to, src }: Skill) => {
   return (
     <Link
       to={to}
