@@ -4,24 +4,30 @@ import { JSX } from "react";
 function Navbar() {
   let location = useLocation();
 
-  let navbar: JSX.Element = <div className="flex"></div>;
+  let navbar: JSX.Element = <div></div>;
 
   if (location.pathname.startsWith("/mars-dashboard")) {
     navbar = (
       <div className="flex flex-wrap">
         <div className="mt-5">
           <Link to="/mars-dashboard/perseverance">
-            <div className="flex p-2 text-gray-400">Perseverance</div>
+            <div className="flex p-2 text-gray-400 hover:text-blue-400">
+              Perseverance
+            </div>
           </Link>
         </div>
         <div className="mt-5">
           <Link to="/mars-dashboard/curiosity">
-            <div className="flex p-2 text-gray-400">Curosity</div>
+            <div className="flex p-2 text-gray-400 hover:text-blue-400">
+              Curosity
+            </div>
           </Link>
         </div>
         <div className="mt-5">
           <Link to="/mars-dashboard/spirit">
-            <div className="flex p-2 text-gray-400">Spirit</div>
+            <div className="flex p-2 text-gray-400 hover:text-blue-400">
+              Spirit
+            </div>
           </Link>
         </div>
         <div className="mt-5">
@@ -36,12 +42,16 @@ function Navbar() {
       <div className="flex flex-wrap">
         <div className="mt-5">
           <Link to="https://www.linkedin.com/in/manpreet-singh-5002105a/">
-            <div className="flex p-2 text-gray-400">LinkedIn</div>
+            <div className="flex p-2 text-gray-400 hover:text-blue-400">
+              LinkedIn
+            </div>
           </Link>
         </div>
         <div className="mt-5">
           <Link to="https://github.com/manpreet07">
-            <div className="flex p-2 text-gray-400">Github</div>
+            <div className="flex p-2 text-gray-400 hover:text-blue-400">
+              Github
+            </div>
           </Link>
         </div>
       </div>
@@ -49,15 +59,15 @@ function Navbar() {
   }
 
   return (
-    <nav className="flex flex-wrap justify-between">
+    <nav className="flex flex-wrap justify-start md:justify-between lg:justify-between">
       <div className="flex">
-        <div className="flex m-5">
-          <Link to="/" className="flex p-2 text-gray-400">
+        <div className="mt-5">
+          <a href="/" className="flex p-2 text-gray-400 hover:text-blue-400">
             Home
-          </Link>
+          </a>
         </div>
       </div>
-      <div className="flex">{navbar}</div>
+      {navbar}
     </nav>
   );
 }
