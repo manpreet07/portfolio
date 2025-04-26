@@ -33,21 +33,22 @@ function Home() {
   }, []);
 
   return (
-    <div className="flex flex-wrap p-4">
-      <div className="flex flex-wrap">
-        <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2">
-          Hi, I am Manpreet Singh
-        </div>
-        <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2">
-          Software Engineer
-        </div>
+    <div className="p-4">
+      <div className="text-2xl sm:text-xl md:text-2xl lg:text-2xl xl:text-4xl p-2">
+        Hi, I am Manpreet Singh
       </div>
-      <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-4xl p-2 mt-10">
+      <div className="text-2xl sm:text-xl md:text-2xl lg:text-2xl xl:text-4xl p-2">
+        Software Engineer
+      </div>
+      <div className="text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg p-2">
+        Building scalable web apps and microservices
+      </div>
+      <div className="text-2xl sm:text-lg md:text-xl lg:text-2xl xl:text-4xl p-2 mt-10">
         Projects
       </div>
       <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-4 mt-5">
         <div className="p-2">
-          <div className="flex text-2xl hover:text-blue-400">
+          <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
             <Link to="/mars-dashboard">Mars Dashboard</Link>
           </div>
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
@@ -72,11 +73,12 @@ function Home() {
                   (s) =>
                     s.src === typescript || s.src === react || s.src === fastApi
                 )
-                .map((mds) => (
+                .map((mds, index) => (
                   <SkillImage
                     to={mds.to}
                     src={mds.src}
                     name={""}
+                    key={index}
                     skillType={"programming language"}
                   />
                 ))}

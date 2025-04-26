@@ -217,12 +217,13 @@ function Skills() {
         <div className="flex flex-wrap">
           {allSkills
             .filter((s) => s.skillType === "programming language")
-            .map((pl) => (
+            .map((pl, index) => (
               <SkillButton
                 to={pl.to}
                 src={pl.src}
                 name={pl.name}
                 skillType={pl.skillType}
+                key={index}
               />
             ))}
         </div>
@@ -230,12 +231,13 @@ function Skills() {
         <div className="flex flex-wrap">
           {allSkills
             .filter((s) => s.skillType === "web development")
-            .map((pl) => (
+            .map((pl, index) => (
               <SkillButton
                 to={pl.to}
                 src={pl.src}
                 name={pl.name}
                 skillType={pl.skillType}
+                key={index}
               />
             ))}
         </div>
@@ -243,12 +245,13 @@ function Skills() {
         <div className="flex flex-wrap">
           {allSkills
             .filter((s) => s.skillType === "database management")
-            .map((pl) => (
+            .map((pl, index) => (
               <SkillButton
                 to={pl.to}
                 src={pl.src}
                 name={pl.name}
                 skillType={pl.skillType}
+                key={index}
               />
             ))}
         </div>
@@ -256,12 +259,13 @@ function Skills() {
         <div className="flex flex-wrap">
           {allSkills
             .filter((s) => s.skillType === "cloud & devops")
-            .map((pl) => (
+            .map((pl, index) => (
               <SkillButton
                 to={pl.to}
                 src={pl.src}
                 name={pl.name}
                 skillType={pl.skillType}
+                key={index}
               />
             ))}
         </div>

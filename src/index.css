@@ -16,7 +16,7 @@
 }
 
 #root {
-  background-color: black;
+  background-color: var(--color-gray-900);
   color: whitesmoke;
   min-height: 100vh;
   font-family: "Courier New", Courier, monospace;
