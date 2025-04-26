@@ -1,6 +1,8 @@
 import { render, screen } from "@testing-library/react";
-import Home from "./Home";
+import Home from "../src/components/Home";
 import { MemoryRouter } from "react-router-dom";
+import React from "react";
+import { describe, test, expect, vi } from "vitest";
 
 vi.mock("@/api/getAPod", () => ({
   getAPod: vi.fn(),
