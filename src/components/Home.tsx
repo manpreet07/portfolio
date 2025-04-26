@@ -1,12 +1,14 @@
 import { Link } from "react-router-dom";
 import Skills, { allSkills } from "./Skills";
 import { useEffect, useState } from "react";
-import axios from "axios";
 import { APod } from "../interfaces/APod";
 import typescript from "./../assets/ts.svg";
 import react from "./../assets/react.svg";
 import fastApi from "./../assets/fast-api.png";
+import python from "./../assets/py.png";
+import vite from "./../assets/vite.svg";
 import { Skill } from "../interfaces/Skill";
+import { getAPod } from "../api/getAPod";
 
 const SkillImage = ({ to, src }: Skill) => {
   return (
@@ -19,13 +21,11 @@ const SkillImage = ({ to, src }: Skill) => {
 function Home() {
   let [apod, setAPod] = useState<APod>();
 
-  const apiUrl = import.meta.env.VITE_SPACE_API_URL;
-
   useEffect(() => {
     const fetchAPod = async () => {
-      const response = await axios.get(apiUrl + "/api/v1/apod");
+      const response = await getAPod();
       if (response) {
-        const aPod: APod = response.data;
+        const aPod: APod = response;
         setAPod(aPod);
       }
     };
@@ -71,7 +71,11 @@ function Home() {
               {allSkills
                 .filter(
                   (s) =>
-                    s.src === typescript || s.src === react || s.src === fastApi
+                    s.src === typescript ||
+                    s.src === react ||
+                    s.src === fastApi ||
+                    s.src === python ||
+                    s.src === vite
                 )
                 .map((mds, index) => (
                   <SkillImage

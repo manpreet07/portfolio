@@ -25,6 +25,7 @@ import mui from "./../assets/mui.svg";
 import sqla from "./../assets/sqla.png";
 import typeorm from "./../assets/typeorm.png";
 import sequelize from "../assets/sequelize.svg";
+import docker from "../assets/docker.png";
 import { Skill } from "../interfaces/Skill";
 
 const SkillButton = ({ name, to, src }: Skill) => {
@@ -202,6 +203,12 @@ export const allSkills: Skill[] = [
     name: "GitHub",
     to: "https://github.com/",
     src: github,
+    skillType: "cloud & devops",
+  },
+  {
+    name: "Docker",
+    to: "https://www.docker.com/",
+    src: docker,
     skillType: "cloud & devops",
   },
 ];
