@@ -45,7 +45,7 @@ function Navbar() {
               </div>
             </Link>
           </div>
-          <div className={!menu ? "mt-10" : "p-5"}>
+          {/* <div className={!menu ? "mt-10" : "p-5"}>
             <Link to="/mars-dashboard/spirit" onClick={() => setMenu(false)}>
               <div
                 className={
@@ -57,8 +57,8 @@ function Navbar() {
                 Spirit
               </div>
             </Link>
-          </div>
-          <div className={!menu ? "mt-10" : "p-5"}>
+          </div> */}
+          {/* <div className={!menu ? "mt-10" : "p-5"}>
             <Link
               to="/mars-dashboard/opportunity"
               onClick={() => setMenu(false)}
@@ -73,7 +73,7 @@ function Navbar() {
                 Opportunity
               </div>
             </Link>
-          </div>
+          </div> */}
         </>
       ) : (
         <>
