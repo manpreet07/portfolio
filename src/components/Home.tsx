@@ -12,6 +12,7 @@ import remix from "../assets/remix.svg";
 import prisma from "../assets/prisma.svg";
 import postgres from "../assets/postgres.png";
 import fly from "../assets/fly.svg";
+import deliverySync from "../assets/menu.png";
 import { Skill } from "../interfaces/Skill";
 import { getAPod } from "../api/getAPod";
 
@@ -101,7 +102,7 @@ function Home() {
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
             <Link to="">
               <img
-                src=""
+                src={deliverySync}
                 className="w-full h-full object-cover aspect-square"
               />
             </Link>
