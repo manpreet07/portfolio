@@ -26,6 +26,10 @@ import sqla from "./../assets/sqla.png";
 import typeorm from "./../assets/typeorm.png";
 import sequelize from "../assets/sequelize.svg";
 import docker from "../assets/docker.png";
+import shopify from "../assets/shopify.svg";
+import remix from "../assets/remix.svg";
+import prisma from "../assets/prisma.svg";
+import fly from "../assets/fly.svg";
 import { Skill } from "../interfaces/Skill";
 
 const SkillButton = ({ name, to, src }: Skill) => {
@@ -132,7 +136,18 @@ export const allSkills: Skill[] = [
     src: mui,
     skillType: "web development",
   },
-
+  {
+    name: "Shopify",
+    to: "https://shopify.dev/docs/apps/build",
+    src: shopify,
+    skillType: "web development",
+  },
+  {
+    name: "Remix",
+    to: "https://remix.run/",
+    src: remix,
+    skillType: "web development",
+  },
   {
     name: "PostgresSQL",
     to: "https://www.postgresql.org/",
@@ -168,6 +183,12 @@ export const allSkills: Skill[] = [
     to: "https://www.sqlalchemy.org/",
     src: sqla,
     skillType: "database management",
+  },
+  {
+    name: "Prisma",
+    to: "https://www.prisma.io/",
+    src: prisma,
+    skillType: "web development",
   },
   {
     name: "Google Cloud",
@@ -209,6 +230,12 @@ export const allSkills: Skill[] = [
     name: "Docker",
     to: "https://www.docker.com/",
     src: docker,
+    skillType: "cloud & devops",
+  },
+  {
+    name: "Fly.io",
+    to: "https://fly.io/",
+    src: fly,
     skillType: "cloud & devops",
   },
 ];
