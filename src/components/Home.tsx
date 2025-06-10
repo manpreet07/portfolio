@@ -109,9 +109,9 @@ function Home() {
           </div>
           <div className="flex flex-col justify-between">
             <div className="flex text-sm mt-5 h-auto">
-              A custom Shopify embedded app designed for retail merchants (e.g.
-              liquor/package stores) to automate menu syncing, inventory
-              updates, and order management between Shopify and Uber Eats.
+              A custom Shopify embedded app designed for retail merchants like
+              liquor/package stores to automate menu syncing, inventory updates,
+              and order management between Shopify and Uber Eats.
             </div>
             <div className="flex mt-5">
               {allSkills
