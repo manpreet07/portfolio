@@ -96,7 +96,7 @@ function Home() {
         </div>
         <div className="p-2">
           <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
-            <Link to="">Delivery Sync</Link>
+            <Link to="/delivery-sync">Delivery Sync</Link>
           </div>
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
             <Link to="">
@@ -137,7 +137,7 @@ function Home() {
         </div>
         <div className="p-2">
           <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
-            <Link to="">Inventory Updater (Coming Soon)</Link>
+            <Link to="/inventory-updater">Inventory Updater (Coming Soon)</Link>
           </div>
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
             <Link to="">

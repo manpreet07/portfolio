@@ -5,6 +5,8 @@ import Navbar from "./components/NavBar";
 import "./index.css";
 
 const MarsDashboardApp = React.lazy(() => import("marsDashboardApp/App"));
+const InventoryUpdaterApp = React.lazy(() => import("inventoryUpdaterApp/App"));
+const DeliverySyncApp = React.lazy(() => import("deliverySyncApp/App"));
 
 function App() {
   return (
@@ -19,6 +21,22 @@ function App() {
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <MarsDashboardApp />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/delivery-sync/*"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <DeliverySyncApp />
+                </Suspense>
+              }
+            />
+            <Route
+              path="/inventory-updater/*"
+              element={
+                <Suspense fallback={<div>Loading...</div>}>
+                  <InventoryUpdaterApp />
                 </Suspense>
               }
             />
