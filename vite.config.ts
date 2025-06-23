@@ -16,9 +16,9 @@ export default defineConfig(({ mode }) => {
     ? `http://localhost:5002/assets/remoteEntry.js`
     : `${env.VITE_DELIVERY_SYNC_APP_URL}`;
 
-  const inventoryUpdaterApp = isDev
+  const inventoryUpdateApp = isDev
     ? `http://localhost:5003/assets/remoteEntry.js`
-    : `${env.VITE_INVENTORY_UPDATER_APP_URL}`;
+    : `${env.VITE_INVENTORY_UPDATE_APP_URL}`;
 
   const salesForcastApp = isDev
     ? `http://localhost:5004/assets/remoteEntry.js`
@@ -33,7 +33,7 @@ export default defineConfig(({ mode }) => {
         remotes: {
           marsDashboardApp,
           deliverySyncApp,
-          inventoryUpdaterApp,
+          inventoryUpdateApp,
           salesForcastApp,
         },
         shared: ["react", "react-dom", "react-router-dom"],
