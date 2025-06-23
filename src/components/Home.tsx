@@ -119,11 +119,11 @@ function Home() {
           </div>
           <div className="flex flex-col justify-between">
             <div className="flex text-sm mt-5 h-auto">
-              Delivery Sync is a designed for retail merchants, to automate menu
-              syncing, inventory updates, and Uber eats order management.
-              Merchants can set markup prices by category, automatically accept
-              orders with in-stock items, and keep their Shopify inventory
-              updated in real time.
+              Delivery Sync is a custom Shopify app designed for retail
+              merchants, to automate menu syncing, inventory updates, and Uber
+              eats order management. Merchants can set markup prices by
+              category, automatically accept orders with in stock items, and
+              keep their Shopify inventory updated in real time.
             </div>
             <div className="flex mt-5">
               {allSkills
@@ -194,7 +194,7 @@ function Home() {
         </div>
         <div className="p-2">
           <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
-            <Link to="/inventory-updater">Inventory Updater (Coming Soon)</Link>
+            <Link to="/inventory-update">Inventory Update (Coming Soon)</Link>
           </div>
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
             <Link to="">
