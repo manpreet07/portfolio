@@ -13,7 +13,7 @@ declare module "deliverySyncApp/App" {
   export default App;
 }
 
-declare module "salesForcasterApp/App" {
+declare module "salesForcastApp/App" {
   const App: React.ComponentType;
   export default App;
 }
