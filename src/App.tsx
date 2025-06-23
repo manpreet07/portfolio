@@ -42,7 +42,7 @@ function App() {
               }
             />
             <Route
-              path="/sales-forcaster/*"
+              path="/sales-forcast/*"
               element={
                 <Suspense fallback={<div>Loading...</div>}>
                   <SalesForcastApp />
