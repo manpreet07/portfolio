@@ -3,7 +3,7 @@ declare module "marsDashboardApp/App" {
   export default App;
 }
 
-declare module "inventoryUpdaterApp/App" {
+declare module "inventoryUpdateApp/App" {
   const App: React.ComponentType;
   export default App;
 }
