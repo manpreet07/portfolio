@@ -150,7 +150,7 @@ function Home() {
         </div>
         <div className="p-2">
           <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
-            <Link to="/inventory-updater">Sales Forcast (Coming Soon)</Link>
+            <Link to="/sales-forcast">Sales Forcast (Coming Soon)</Link>
           </div>
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
             <Link to="">
