@@ -20,9 +20,9 @@ export default defineConfig(({ mode }) => {
     ? `http://localhost:5003/assets/remoteEntry.js`
     : `${env.VITE_INVENTORY_UPDATER_APP_URL}`;
 
-  const salesForcasterApp = isDev
+  const salesForcastApp = isDev
     ? `http://localhost:5004/assets/remoteEntry.js`
-    : `${env.VITE_SALES_FORCASTER_APP_URL}`;
+    : `${env.VITE_SALES_FORCAST_APP_URL}`;
 
   return {
     plugins: [
@@ -34,7 +34,7 @@ export default defineConfig(({ mode }) => {
           marsDashboardApp,
           deliverySyncApp,
           inventoryUpdaterApp,
-          salesForcasterApp,
+          salesForcastApp,
         },
         shared: ["react", "react-dom", "react-router-dom"],
       }),
