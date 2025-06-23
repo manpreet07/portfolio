@@ -179,6 +179,8 @@ function Home() {
                     s.src === remix ||
                     s.src === prisma ||
                     s.src === postgres ||
+                    s.src === fastApi ||
+                    s.src === python ||
                     s.src === fly
                 )
                 .map((mds) => (
@@ -222,6 +224,8 @@ function Home() {
                     s.src === remix ||
                     s.src === prisma ||
                     s.src === postgres ||
+                    s.src === fastApi ||
+                    s.src === python ||
                     s.src === fly
                 )
                 .map((mds) => (
