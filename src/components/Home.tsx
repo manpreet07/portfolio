@@ -7,8 +7,14 @@ import react from "./../assets/react.svg";
 import fastApi from "./../assets/fast-api.png";
 import python from "./../assets/py.png";
 import vite from "./../assets/vite.svg";
+import shopify from "../assets/shopify.svg";
+import remix from "../assets/remix.svg";
+import prisma from "../assets/prisma.svg";
+import postgres from "../assets/postgres.png";
+import fly from "../assets/fly.svg";
 import { Skill } from "../interfaces/Skill";
 import { getAPod } from "../api/getAPod";
+import demo from "../assets/demo.mp4";
 
 const SkillImage = ({ to, src }: Skill) => {
   return (
@@ -66,6 +72,8 @@ function Home() {
               Rover Photos API. Users can explore images by rover (Perseverance,
               Curiosity, Opportunity, and Spirit), camera type, and Martian sol
               (solar day).
+              <br />
+              <br />
             </div>
             <div className="flex mt-5">
               {allSkills
@@ -83,15 +91,66 @@ function Home() {
                     src={mds.src}
                     name={""}
                     key={index}
-                    skillType={"programming language"}
+                    skillType={mds.skillType}
                   />
                 ))}
             </div>
           </div>
         </div>
         <div className="p-2">
-          <div className="flex text-2xl hover:text-blue-400">
-            <Link to="">(coming soon)</Link>
+          <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
+            <Link to="/delivery-sync">Delivery Sync</Link>
+          </div>
+          <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
+            <Link to="">
+              <video
+                width="640"
+                height="360"
+                controls
+                autoPlay
+                muted
+                loop
+                style={{ borderRadius: "8px" }}
+                className="w-full h-full object-cover aspect-square"
+              >
+                <source src={demo} type="video/mp4" />
+              </video>
+            </Link>
+          </div>
+          <div className="flex flex-col justify-between">
+            <div className="flex text-sm mt-5 h-auto">
+              Delivery Sync is a designed for retail merchants, to automate menu
+              syncing, inventory updates, and Uber eats order management.
+              Merchants can set markup prices by category, automatically accept
+              orders with in-stock items, and keep their Shopify inventory
+              updated in real time.
+            </div>
+            <div className="flex mt-5">
+              {allSkills
+                .filter(
+                  (s) =>
+                    s.src === typescript ||
+                    s.src === react ||
+                    s.src === shopify ||
+                    s.src === remix ||
+                    s.src === prisma ||
+                    s.src === postgres ||
+                    s.src === fly
+                )
+                .map((mds) => (
+                  <SkillImage
+                    to={mds.to}
+                    src={mds.src}
+                    name={""}
+                    skillType={mds.skillType}
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
+        <div className="p-2">
+          <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
+            <Link to="/inventory-updater">Sales Forcaster (Coming Soon)</Link>
           </div>
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
             <Link to="">
@@ -102,16 +161,75 @@ function Home() {
             </Link>
           </div>
           <div className="flex flex-col justify-between">
-            <div className="flex text-sm mt-5 h-auto"></div>
+            <div className="flex text-sm mt-5 h-auto">
+              Sales Forecast app is a powerful tool for Shopify store owners
+              that helps predict future sales using Machine Learning. It looks
+              at store’s past performance to forecast what’s likely to sell in
+              near future.
+              <br />
+              <br />
+            </div>
             <div className="flex mt-5">
               {allSkills
-                .filter((s) => s.src === typescript && s.src === react)
+                .filter(
+                  (s) =>
+                    s.src === typescript ||
+                    s.src === react ||
+                    s.src === shopify ||
+                    s.src === remix ||
+                    s.src === prisma ||
+                    s.src === postgres ||
+                    s.src === fly
+                )
                 .map((mds) => (
                   <SkillImage
                     to={mds.to}
                     src={mds.src}
                     name={""}
-                    skillType={"programming language"}
+                    skillType={mds.skillType}
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
+        <div className="p-2">
+          <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
+            <Link to="/inventory-updater">Inventory Updater (Coming Soon)</Link>
+          </div>
+          <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
+            <Link to="">
+              <img
+                src=""
+                className="w-full h-full object-cover aspect-square"
+              />
+            </Link>
+          </div>
+          <div className="flex flex-col justify-between">
+            <div className="flex text-sm mt-5 h-auto">
+              Another custom Shopify app that automates inventory management by
+              allowing merchants to upload images of supplier invoices. The app
+              uses OCR (Optical Character Recognition) to extract product
+              details from the image, then automatically updates inventory
+              levels in the Shopify store, eliminating manual data entry.
+            </div>
+            <div className="flex mt-5">
+              {allSkills
+                .filter(
+                  (s) =>
+                    s.src === typescript ||
+                    s.src === react ||
+                    s.src === shopify ||
+                    s.src === remix ||
+                    s.src === prisma ||
+                    s.src === postgres ||
+                    s.src === fly
+                )
+                .map((mds) => (
+                  <SkillImage
+                    to={mds.to}
+                    src={mds.src}
+                    name={""}
+                    skillType={mds.skillType}
                   />
                 ))}
             </div>
