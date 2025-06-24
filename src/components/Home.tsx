@@ -154,7 +154,7 @@ function Home() {
           </div>
           <div className="flex flex-col justify-between">
             <div className="flex text-sm mt-5 h-auto">
-              Sales Forecast app is a powerful tool for Shopify retial store
+              Sales Forecast app is a powerful tool for Shopify retail store
               owners that helps predict future sales using Machine Learning. It
               looks at store’s past performance to forecast what’s likely to
               sell in near future.
