@@ -14,7 +14,7 @@ import postgres from "../assets/postgres.png";
 import fly from "../assets/fly.svg";
 import { Skill } from "../interfaces/Skill";
 import { getAPod } from "../api/getAPod";
-import demo from "../assets/demo.mp4";
+import deliverySync from "../assets/delivery-sync.png";
 
 const SkillImage = ({ to, src }: Skill) => {
   return (
@@ -102,19 +102,11 @@ function Home() {
             <Link to="/delivery-sync">Delivery Sync</Link>
           </div>
           <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
-            <Link to="">
-              <video
-                width="640"
-                height="360"
-                controls
-                autoPlay
-                muted
-                loop
-                style={{ borderRadius: "8px" }}
+            <Link to="/delivery-sync">
+              <img
+                src={deliverySync}
                 className="w-full h-full object-cover aspect-square"
-              >
-                <source src={demo} type="video/mp4" />
-              </video>
+              />
             </Link>
           </div>
           <div className="flex flex-col justify-between">
