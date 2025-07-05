@@ -140,7 +140,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="p-2">
+        {/* <div className="p-2">
           <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
             <Link to="/sales-forcast">Sales Forcast (Coming Soon)</Link>
           </div>
@@ -230,7 +230,7 @@ function Home() {
                 ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="inline">
         <div className="text-2xl sm:text-4xl md:text-6xl lg:text-8xl xl:text-5xl p-2 mt-10">
