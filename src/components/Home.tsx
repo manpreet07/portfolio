@@ -9,6 +9,12 @@ import python from "./../assets/py.png";
 import vite from "./../assets/vite.svg";
 import { Skill } from "../interfaces/Skill";
 import { getAPod } from "../api/getAPod";
+import shopify from "../assets/shopify.svg";
+import remix from "../assets/remix.svg";
+import prisma from "../assets/prisma.svg";
+import postgres from "../assets/postgres.png";
+import fly from "../assets/fly.svg";
+import deliverySync from "../assets/delivery-sync.png";
 
 const SkillImage = ({ to, src }: Skill) => {
   return (
@@ -85,6 +91,49 @@ function Home() {
                     src={mds.src}
                     name={""}
                     key={index}
+                    skillType={mds.skillType}
+                  />
+                ))}
+            </div>
+          </div>
+        </div>
+        <div className="p-2">
+          <div className="flex text-sm sm:text-xs md:text-sm lg:text-lg xl:text-lg hover:text-blue-400">
+            <Link to="/delivery-sync">Delivery Sync</Link>
+          </div>
+          <div className="mt-5 rounded-lg overflow-hidden aspect-[16/9]">
+            <Link to="/delivery-sync">
+              <img
+                src={deliverySync}
+                className="w-full h-full object-cover aspect-square"
+              />
+            </Link>
+          </div>
+          <div className="flex flex-col justify-between">
+            <div className="flex text-sm mt-5 h-auto">
+              Delivery Sync is a custom Shopify app designed for retail
+              merchants, to automate menu syncing, inventory updates, and Uber
+              eats order management. Merchants can set markup prices by
+              category, automatically accept orders with in stock items, and
+              keep their Shopify inventory updated in real time.
+            </div>
+            <div className="flex mt-5">
+              {allSkills
+                .filter(
+                  (s) =>
+                    s.src === typescript ||
+                    s.src === react ||
+                    s.src === shopify ||
+                    s.src === remix ||
+                    s.src === prisma ||
+                    s.src === postgres ||
+                    s.src === fly
+                )
+                .map((mds) => (
+                  <SkillImage
+                    to={mds.to}
+                    src={mds.src}
+                    name={""}
                     skillType={mds.skillType}
                   />
                 ))}
